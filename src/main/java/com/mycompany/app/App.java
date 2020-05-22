@@ -11,11 +11,10 @@ public class App
     public App() {}
 
     public static void main(String[] args) {
-        File tempDir;
-        tempDir = File.createTempFile("", ".");
-        tempDir.delete();
-        tempDir.mkdir();
         System.out.println(new App().getMessage());
+        String user = "random";
+        String pass = "user";
+        String query = "SELECT * FROM users WHERE user = '" + user + "' AND pass = '" + pass + "'";
     }
 
     private final String getMessage() {
