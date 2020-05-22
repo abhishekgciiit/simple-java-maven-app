@@ -28,10 +28,9 @@ pipeline {
             options {
                timeout(time: 1, unit: 'HOURS') 
             }
-            steps{
-               steps {
-                  waitForQualityGate abortPipeline: true
-              }
+            steps {
+               waitForQualityGate abortPipeline: true
+            }
         }
         stage('Deliver') {
             steps {
