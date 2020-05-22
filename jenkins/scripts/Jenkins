@@ -1,11 +1,6 @@
 pipeline {
    agent any
    stages {
-       stage('Source Code Checkout'){
-           steps{
-               checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github_creds', url: 'https://github.com/abhishekgciiit/simple-java-maven-app']]])
-           }
-       }
         stage('Build') {
             steps {
                 
