@@ -25,11 +25,13 @@ pipeline {
             }
         }
         stage ("Code Quality Review"){
-            timeout(time: 1, unit: 'HOURS'){
+            steps{
+               timeout(time: 1, unit: 'HOURS'){
                   def qg = waitForQualityGate()
                   if(qg.status != 'OK'){
                      error "Pipeline did not qualify the quality controls in place : ${qg.status}"
                   }
+               }
             }
         }
         stage('Deliver') {
